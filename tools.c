@@ -29,3 +29,22 @@ int getSafeInt(char* prompt) {
         }
     }
 }
+
+float getSafeFloat(char* prompt)
+{
+    float value;
+    while (1)
+    {
+        printf("%s", prompt);
+        if (scanf("%f", &value) == 1)
+        {
+            while (getchar() != '\n');
+            return value;
+        }
+        else
+        {
+            printf("?redo from start\n");
+            while (getchar() != '\n');
+        }
+    }
+}
